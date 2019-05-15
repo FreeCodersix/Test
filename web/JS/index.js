@@ -96,33 +96,21 @@ $(document).keydown(function (event) {
             }
             break;
         case 38://up
-            //每次移动都需要生成一个数字
-            randomNum();
-            for (var i = 0; i < 4; i++) {
-                for (var j = 0; j < 4; j++) {
-                    if (board[i][j] !== 0)
-                        moveAnimation(i, j);
-                }
+            if (moveUp()) {
+                //每次移动都需要生成一个数字
+                randomNum();
             }
             break;
         case 39://right
-            //每次移动都需要生成一个数字
-            randomNum();
-            for (var i = 0; i < 4; i++) {
-                for (var j = 0; j < 4; j++) {
-                    if (board[i][j] !== 0)
-                        moveAnimation(i, j);
-                }
+            if (moveRight()) {
+                //每次移动都需要生成一个数字
+                randomNum();
             }
             break;
         case 40://down
-            //每次移动都需要生成一个数字
-            randomNum();
-            for (var i = 0; i < 4; i++) {
-                for (var j = 0; j < 4; j++) {
-                    if (board[i][j] !== 0)
-                        moveAnimation(i, j);
-                }
+            if (moveDown()) {
+                //每次移动都需要生成一个数字
+                randomNum();
             }
             break;
     }
@@ -164,6 +152,116 @@ function moveLeft() {
     return true;
 }
 
+function moveRight() {
+    //判断格子是否能够向右移动
+    if (!canMoveRight(board))
+        return false;
+
+    addedReset();
+    //函数核心
+    for (var i = 0; i < 4; i++)
+        for (var j = 2; j >= 0; j--) {//最后一列的数字不可能向右移动
+            if (board[i][j] != 0) {
+                //(i,j)右侧的元素
+                for (var k = 3; k > j; k--) {
+                    //落脚位置的是否为空 && 中间没有障碍物
+                    if (board[i][k] == 0 && noBlockHorizontal(i, j, k, board)) {
+                        //move
+                        moveAnimation(i, j, i, k);
+                        board[i][k] = board[i][j];
+                        board[i][j] = 0;
+                        continue;
+                    }
+                    //落脚位置的数字和本来的数字相等 && 中间没有障碍物
+                    else if (board[i][k] == board[i][j] && noBlockHorizontal(i, j, k, board)) {
+                        //move
+                        moveAnimation(i, j, i, k);
+                        //add
+                        board[i][k] += board[i][j];
+                        board[i][j] = 0;
+                        added[i][k] = 1;
+                        continue;
+                    }
+                }
+            }
+        }
+    setTimeout("updateThePage()", 200);
+    return true;
+}
+
+function moveUp() {
+    //判断格子是否能够向上移动
+    if (!canMoveUp(board))
+        return false;
+
+    addedReset();
+    for (var j = 0; j < 4; j++)
+        for (var i = 1; i < 4; i++) {//第一行的数字不可能向上移动
+            if (board[i][j] != 0) {
+                //(i,j)上面的元素
+                for (var k = 0; k < i; k++) {
+                    //落脚位置的是否为空 && 中间没有障碍物
+                    if (board[k][j] == 0 && noBlockVertical(j, k, i, board)) {
+                        //move
+                        moveAnimation(i, j, k, j);
+                        board[k][j] = board[i][j];
+                        board[i][j] = 0;
+                        continue;
+                    }
+                    //落脚位置的数字和本来的数字相等 && 中间没有障碍物
+                    else if (board[k][j] == board[i][j] && noBlockVertical(j, k, i, board)) {
+                        //move
+                        moveAnimation(i, j, k, j);
+                        //add
+                        board[k][j] += board[i][j];
+                        board[i][j] = 0;
+                        added[k][j] = 1;
+                        score += board[k][j];
+                        continue;
+                    }
+                }
+            }
+        }
+    setTimeout("updateThePage()", 200);
+    return true;
+}
+
+function moveDown() {
+    //判断格子是否能够向下移动
+    if (!canMoveDown(board))
+        return false;
+
+    addedReset();
+    for (var j = 0; j < 4; j++)
+        for (var i = 2; i >= 0; i--) {//最后一行的数字不可能向下移动
+            if (board[i][j] != 0) {
+                //(i,j)上面的元素
+                for (var k = 3; k > i; k--) {
+                    //落脚位置的是否为空 && 中间没有障碍物
+                    if (board[k][j] == 0 && noBlockVertical(j, i, k, board)) {
+                        //move
+                        moveAnimation(i, j, k, j);
+                        board[k][j] = board[i][j];
+                        board[i][j] = 0;
+                        continue;
+                    }
+                    //落脚位置的数字和本来的数字相等 && 中间没有障碍物
+                    else if (board[k][j] == board[i][j] && noBlockVertical(j, i, k, board)) {
+                        //move
+                        moveAnimation(i, j, k, j);
+                        //add
+                        board[k][j] += board[i][j];
+                        board[i][j] = 0;
+                        added[k][j] = 1;
+                        continue;
+                    }
+                }
+            }
+        }
+    setTimeout("updateThePage()", 200);
+    return true;
+}
+
 function addedReset() {
     for (var i = 0; i < 4; i++) {
         for (var j = 0; j < 4; j++) {
@@ -180,8 +278,35 @@ function canMoveLeft() {
     return false;
 }
 
-function moveAnimation(x, y) {//实现移动格子的样式变动
+function canMoveRight( board ){
+    for(var i = 0;i<4;i++)
+        for(var j = 0;j<4;j++)
+            if( board[i][j] !=0 && j != 3)
+                if( board[i][j+1] == 0 || board[i][j+1] == board[i][j])
+                    return true;
 
+    return false;
+}
+
+function canMoveUp( board ){
+    for(var i = 0;i<4;i++)
+        for(var j = 0;j<4;j++)
+            if( board[i][j] !=0 && i != 0)
+                if( board[i-1][j] == 0 || board[i-1][j] == board[i][j])
+                    return true;
+    return false;
+}
+
+function canMoveDown( board ){
+    for(var i = 0;i<4;i++)
+        for(var j = 0;j<4;j++)
+            if( board[i][j] !=0 && i != 3)
+                if( board[i+1][j] == 0 || board[i+1][j] == board[i][j])
+                    return true;
+    return false;
+}
+
+function moveAnimation(x, y) {//实现移动格子的样式变动
     var numberGrid = $('#number-grid-' + x + '-' + y);
     numberGrid.animate({
         top: getPosTop(x),
@@ -189,9 +314,18 @@ function moveAnimation(x, y) {//实现移动格子的样式变动
     }, 200);
 }
 
+////判断水平方向是否有障碍物
 function noBlockHorizontal(row, col1, col2, board){
     for(var i = col2 + 1; i<col1; i++)
         if(board[row][i]!=0)
+            return false;
+    return true;
+}
+
+//判断竖直方向是否有障碍物
+function noBlockVertical(col, row1, row2, board){
+    for(var i = row1 + 1; i<row2; i++)
+        if(board[i][col]!=0)
             return false;
     return true;
 }

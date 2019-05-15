@@ -32,13 +32,29 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/JS/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1620">
-              <caret line="91" column="22" lean-forward="false" selection-start-line="91" selection-start-column="22" selection-end-line="91" selection-end-column="22" />
+            <state relative-caret-position="-347">
+              <caret line="228" column="20" lean-forward="false" selection-start-line="228" selection-start-column="20" selection-end-line="228" selection-end-column="20" />
               <folding>
                 <element signature="e#124#152#0" expanded="false" />
+                <element signature="n#!!block;n#init#0" expanded="false" />
                 <element signature="n#!!block;n#getPosTop#0" expanded="false" />
                 <element signature="n#!!block;n#getPosLeft#0" expanded="false" />
-                <element signature="e#3462#4428#0" expanded="false" />
+                <element signature="n#!!block;n#updateThePage#0" expanded="false" />
+                <element signature="n#!!block;n#randomNum#0" expanded="false" />
+                <element signature="e#2194#2818#0" expanded="false" />
+                <element signature="n#!!block;n#moveLeft#0" expanded="false" />
+                <element signature="e#2993#3959#0" expanded="false" />
+                <element signature="n#!!block;n#moveRight#0" expanded="false" />
+                <element signature="n#!!block;n#moveUp#0" expanded="false" />
+                <element signature="n#!!block;n#moveDown#0" expanded="false" />
+                <element signature="n#!!block;n#addedReset#0" expanded="false" />
+                <element signature="n#!!block;n#canMoveLeft#0" expanded="false" />
+                <element signature="n#!!block;n#canMoveRight#0" expanded="false" />
+                <element signature="n#!!block;n#canMoveUp#0" expanded="false" />
+                <element signature="n#!!block;n#canMoveDown#0" expanded="false" />
+                <element signature="n#!!block;n#moveAnimation#0" expanded="false" />
+                <element signature="n#!!block;n#noBlockHorizontal#0" expanded="false" />
+                <element signature="n#!!block;n#noBlockVertical#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -71,10 +87,16 @@
       <find>numberGrid</find>
       <find>randy</find>
       <find>generateOneNumber</find>
+      <find>showMoveAnimation</find>
+      <find>isaddedArray</find>
+      <find>updateBoardView</find>
     </findStrings>
     <replaceStrings>
       <replace>y</replace>
       <replace>randomNum</replace>
+      <replace>moveAnimation</replace>
+      <replace>addedReset</replace>
+      <replace>updateThePage</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -110,7 +132,7 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="534" />
     <option name="y" value="31" />
     <option name="width" value="730" />
@@ -468,15 +490,15 @@
       <updated>1557887065819</updated>
       <workItem from="1557887070148" duration="1546000" />
       <workItem from="1557895019214" duration="7111000" />
-      <workItem from="1557903361929" duration="9991000" />
+      <workItem from="1557903361929" duration="10918000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18648000" />
+    <option name="totallyTimeSpent" value="19575000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -519,7 +541,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -538,9 +560,25 @@
           <caret line="83" column="23" lean-forward="true" selection-start-line="83" selection-start-column="23" selection-end-line="83" selection-end-column="23" />
           <folding>
             <element signature="e#124#152#0" expanded="false" />
+            <element signature="n#!!block;n#init#0" expanded="false" />
             <element signature="n#!!block;n#getPosTop#0" expanded="false" />
             <element signature="n#!!block;n#getPosLeft#0" expanded="false" />
-            <element signature="e#3462#4428#0" expanded="false" />
+            <element signature="n#!!block;n#updateThePage#0" expanded="false" />
+            <element signature="n#!!block;n#randomNum#0" expanded="false" />
+            <element signature="e#2194#2818#0" expanded="false" />
+            <element signature="n#!!block;n#moveLeft#0" expanded="false" />
+            <element signature="e#2993#3959#0" expanded="false" />
+            <element signature="n#!!block;n#moveRight#0" expanded="false" />
+            <element signature="n#!!block;n#moveUp#0" expanded="false" />
+            <element signature="n#!!block;n#moveDown#0" expanded="false" />
+            <element signature="n#!!block;n#addedReset#0" expanded="false" />
+            <element signature="n#!!block;n#canMoveLeft#0" expanded="false" />
+            <element signature="n#!!block;n#canMoveRight#0" expanded="false" />
+            <element signature="n#!!block;n#canMoveUp#0" expanded="false" />
+            <element signature="n#!!block;n#canMoveDown#0" expanded="false" />
+            <element signature="n#!!block;n#moveAnimation#0" expanded="false" />
+            <element signature="n#!!block;n#noBlockHorizontal#0" expanded="false" />
+            <element signature="n#!!block;n#noBlockVertical#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -627,13 +665,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/JS/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1620">
-          <caret line="91" column="22" lean-forward="false" selection-start-line="91" selection-start-column="22" selection-end-line="91" selection-end-column="22" />
+        <state relative-caret-position="-347">
+          <caret line="228" column="20" lean-forward="false" selection-start-line="228" selection-start-column="20" selection-end-line="228" selection-end-column="20" />
           <folding>
             <element signature="e#124#152#0" expanded="false" />
+            <element signature="n#!!block;n#init#0" expanded="false" />
             <element signature="n#!!block;n#getPosTop#0" expanded="false" />
             <element signature="n#!!block;n#getPosLeft#0" expanded="false" />
-            <element signature="e#3462#4428#0" expanded="false" />
+            <element signature="n#!!block;n#updateThePage#0" expanded="false" />
+            <element signature="n#!!block;n#randomNum#0" expanded="false" />
+            <element signature="e#2194#2818#0" expanded="false" />
+            <element signature="n#!!block;n#moveLeft#0" expanded="false" />
+            <element signature="e#2993#3959#0" expanded="false" />
+            <element signature="n#!!block;n#moveRight#0" expanded="false" />
+            <element signature="n#!!block;n#moveUp#0" expanded="false" />
+            <element signature="n#!!block;n#moveDown#0" expanded="false" />
+            <element signature="n#!!block;n#addedReset#0" expanded="false" />
+            <element signature="n#!!block;n#canMoveLeft#0" expanded="false" />
+            <element signature="n#!!block;n#canMoveRight#0" expanded="false" />
+            <element signature="n#!!block;n#canMoveUp#0" expanded="false" />
+            <element signature="n#!!block;n#canMoveDown#0" expanded="false" />
+            <element signature="n#!!block;n#moveAnimation#0" expanded="false" />
+            <element signature="n#!!block;n#noBlockHorizontal#0" expanded="false" />
+            <element signature="n#!!block;n#noBlockVertical#0" expanded="false" />
           </folding>
         </state>
       </provider>
