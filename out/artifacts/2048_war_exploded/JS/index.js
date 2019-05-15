@@ -60,7 +60,9 @@ function updateThePage() {//更新游戏界面。
                     "width": 100,
                     "height": 100,
                     "top": getPosTop(i),
-                    "left": getPosLeft(j)
+                    "left": getPosLeft(j),
+                    "background-color": getNumberBgc(board[i][j]),
+                    "color": getNumberColor(board[i][j])
                 });
                 numberGrid.text(board[i][j]);
             }
@@ -316,11 +318,12 @@ function moveAnimation(fromx, fromy, tox, toy){//实现格子移动方法
 
 function numberAnimation(i, j, randNumber) {//实现随机数字的样式变动
 
-    var numberCell = $('#number-cell-' + i + '-' + j);
+    var numberGrid = $('#number-grid-' + i + '-' + j);
+    numberGrid.css("background-color", getNumberBgc(randNumber));
+    numberGrid.css("color", getNumberColor(randNumber));
+    numberGrid.text(randNumber);
 
-    numberCell.text(randNumber);
-
-    numberCell.animate({
+    numberGrid.animate({
         width : "100px",
         height : "100px",
         top : getPosTop(i),
@@ -342,4 +345,56 @@ function noBlockVertical(col, row1, row2, board){
         if(board[i][col]!=0)
             return false;
     return true;
+}
+
+function getNumberBgc(number) {
+    switch (number) {
+        case 2:
+            return "#eee4da";
+            break;
+        case 4:
+            return "#eee4da";
+            break;
+        case 8:
+            return "#f26179";
+            break;
+        case 16:
+            return "#f59563";
+            break;
+        case 32:
+            return "#f67c5f";
+            break;
+        case 64:
+            return "#f65e36";
+            break;
+        case 128:
+            return "#edcf72";
+            break;
+        case 256:
+            return "#edcc61";
+            break;
+        case 512:
+            return "#9c0";
+            break;
+        case 1024:
+            return "#3365a5";
+            break;
+        case 2048:
+            return "#09c";
+            break;
+        case 4096:
+            return "#a6bc";
+            break;
+        case 8192:
+            return "#93c";
+            break;
+    }
+    return "black";
+}
+
+function getNumberColor(number) {
+    if (number <= 4){
+        return "#776e65";
+    }
+    return "white";
 }
