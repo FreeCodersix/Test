@@ -44,7 +44,7 @@ function updateThePage() {//更新数组的前端样式
             if (board[i][j] == 0) {
                 numberGrid.css({
                     "width": 0,
-                    "height":0
+                    "height": 0
                 })
             } else {
                 numberGrid.css({
@@ -77,3 +77,59 @@ function randomNum() {//生成随机的格子
     return true;
 }
 
+//上下左右按键响应
+$(document).keydown(function (event) {
+    switch (event.keyCode) {
+        case 37://left
+            //每次移动都需要生成一个数字
+
+            for (var i = 0; i < 4; i++) {
+                for (var j = 0; j < 4; j++) {
+                    if (board[i][j]!==0)
+                    moveAnimation(i, j);
+                }
+            }
+            randomNum();
+
+            break;
+        case 38://up
+            //每次移动都需要生成一个数字
+            randomNum();
+            for (var i = 0; i < 4; i++) {
+                for (var j = 0; j < 4; j++) {
+                    if (board[i][j]!==0)
+                        moveAnimation(i, j);
+                }
+            }
+            break;
+        case 39://right
+            //每次移动都需要生成一个数字
+            randomNum();
+            for (var i = 0; i < 4; i++) {
+                for (var j = 0; j < 4; j++) {
+                    if (board[i][j]!==0)
+                        moveAnimation(i, j);
+                }
+            }
+            break;
+        case 40://down
+            //每次移动都需要生成一个数字
+            randomNum();
+            for (var i = 0; i < 4; i++) {
+                for (var j = 0; j < 4; j++) {
+                    if (board[i][j]!==0)
+                        moveAnimation(i, j);
+                }
+            }
+            break;
+    }
+});
+
+function moveAnimation(x,y) {//实现移动格子的样式变动
+
+    var numberGrid = $('#number-grid-' + x + '-' + y);
+    numberGrid.animate({
+        top: getPosTop(x),
+        left: 20
+    }, 200);
+}
