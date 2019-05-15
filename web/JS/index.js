@@ -83,6 +83,7 @@ function randomNum() {//生成随机的格子
     var randNumber = Math.random() < 0.5 ? 2 : 4;
     //在随机出来的位置上显示随机数字
     board[x][y] = randNumber;
+    numberAnimation(x, y,randNumber);
     return true;
 }
 
@@ -306,12 +307,25 @@ function canMoveDown( board ){
     return false;
 }
 
-function moveAnimation(x, y) {//实现移动格子的样式变动
-    var numberGrid = $('#number-grid-' + x + '-' + y);
-    numberGrid.animate({
-        top: getPosTop(x),
-        left: 20
-    }, 200);
+function moveAnimation(fromx, fromy, tox, toy){//实现格子移动方法
+
+    var numberCell = $('#number-cell-'+fromx +'-'+fromy);
+    numberCell.animate({top:getPosTop(tox),
+        left:getPosLeft(toy)},200);
+}
+
+function numberAnimation(i, j, randNumber) {//实现随机数字的样式变动
+
+    var numberCell = $('#number-cell-' + i + '-' + j);
+
+    numberCell.text(randNumber);
+
+    numberCell.animate({
+        width : "100px",
+        height : "100px",
+        top : getPosTop(i),
+        left : getPosLeft(j)
+    }, 50);
 }
 
 ////判断水平方向是否有障碍物
