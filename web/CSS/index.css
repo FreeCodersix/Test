@@ -1,0 +1,39 @@
+header {
+    display: block;
+    margin: 0 auto;
+    width: 500px;
+    text-align: center;
+}
+
+header h1 {
+    font-family: Arial,sans-serif;
+    font-size: 60px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+header p {
+    font-family: Arial,sans-serif;
+    font-size: 25px;
+    margin: 20px auto;
+}
+
+#grid-container {
+    width: 460px;
+    height: 460px;
+    padding: 20px;
+    margin: 40px auto;
+    background: black;
+    border-radius: 10px;
+}
+
+.grid-cell {
+    width: 100px;
+    height: 100px;
+    border-radius: 6px;
+    background: white;
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 16px;
+}
