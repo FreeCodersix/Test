@@ -26,6 +26,7 @@ header p {
     margin: 40px auto;
     background: black;
     border-radius: 10px;
+    position: relative;
 }
 
 .grid-cell {
@@ -33,7 +34,6 @@ header p {
     height: 100px;
     border-radius: 6px;
     background: white;
-    float: left;
-    margin-right: 15px;
-    margin-bottom: 16px;
+    position: absolute;
+
 }
