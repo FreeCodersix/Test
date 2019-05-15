@@ -5,6 +5,8 @@
     <title>网页版2048</title>
     <link rel="stylesheet" type="text/css" href="CSS/Clear.css">
     <link rel="stylesheet" type="text/css" href="CSS/index.css">
+    <script src="JS/jquery-1.12.4.js"></script>
+    <script src="JS/index.js"></script>
 </head>
 
 <body>
