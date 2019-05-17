@@ -13,6 +13,20 @@ header h1 {
     margin-bottom: 20px;
 }
 
+header #newgameButton{
+    width: 100px;
+    height: 37px;
+    padding: 10px;
+    background: #8f7a66;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
 header p {
     font-family: Arial,sans-serif;
     font-size: 25px;
