@@ -9,12 +9,14 @@ $(document).ready(function (e) {
 
 function init() {
     score = 0;
-    $("#gameover").css("display","none");
+    $("#gameover").css("display", "none");
     for (var i = 0; i < 4; i++) {
         for (var j = 0; j < 4; j++) {
             var gridCell = $("#grid-cell-" + i + "-" + j);
-            gridCell.css("top", getPosTop(i));
-            gridCell.css("left", getPosLeft(j));
+            gridCell.css({
+                "top": getPosTop(i),
+                "left": getPosLeft(j)
+            });
         }
     }
 
@@ -55,7 +57,7 @@ function updateThePage() {//更新游戏界面。
                 numberGrid.css({
                     "width": 0,
                     "height": 0
-                })
+                });
             } else {
                 numberGrid.css({
                     "width": 100,
@@ -72,9 +74,8 @@ function updateThePage() {//更新游戏界面。
 }
 
 function randomNum() {//生成随机的格子
-    if (nospace(board)){
+    if (nospace(board))
         return false;
-    }
 
     //随机一个位置
     var x = parseInt(Math.floor(Math.random() * 4));
@@ -89,7 +90,7 @@ function randomNum() {//生成随机的格子
     var randNumber = Math.random() < 0.5 ? 2 : 4;
     //在随机出来的位置上显示随机数字
     board[x][y] = randNumber;
-    numberAnimation(x, y,randNumber);
+    numberAnimation(x, y, randNumber);
     return true;
 }
 
@@ -148,7 +149,6 @@ function moveLeft() {
                         moveAnimation(i, j, i, k);
                         board[i][k] = board[i][j];
                         board[i][j] = 0;
-                        continue;
                     }
                     //落脚位置的数字和本来的数字相等 && 中间没有障碍物
                     else if (board[i][k] === board[i][j] && noBlockHorizontal(i, j, k, board)) {
@@ -158,7 +158,6 @@ function moveLeft() {
                         board[i][j] = 0;
                         added[i][k] = 1;//此位置已经合并过，避免一次按键触发多次事件
                         score += board[i][k];
-                        continue;
                     }
                 }
             }
@@ -180,15 +179,14 @@ function moveRight() {
                 //(i,j)右侧的元素
                 for (var k = 3; k > j; k--) {
                     //落脚位置的是否为空 && 中间没有障碍物
-                    if (board[i][k] === 0 && noBlockHorizontal(i, j, k, board)) {
+                    if (board[i][k] === 0 && noBlockHorizontal(i, k, j, board)) {
                         //move
                         moveAnimation(i, j, i, k);
                         board[i][k] = board[i][j];
                         board[i][j] = 0;
-                        continue;
                     }
                     //落脚位置的数字和本来的数字相等 && 中间没有障碍物
-                    else if (board[i][k] === board[i][j] && noBlockHorizontal(i, j, k, board)) {
+                    else if (board[i][k] === board[i][j] && noBlockHorizontal(i, k, j, board)) {
                         //move
                         moveAnimation(i, j, i, k);
                         //add
@@ -196,7 +194,6 @@ function moveRight() {
                         board[i][j] = 0;
                         added[i][k] = 1;
                         score += board[i][k];
-                        continue;
                     }
                 }
             }
@@ -222,7 +219,6 @@ function moveUp() {
                         moveAnimation(i, j, k, j);
                         board[k][j] = board[i][j];
                         board[i][j] = 0;
-                        continue;
                     }
                     //落脚位置的数字和本来的数字相等 && 中间没有障碍物
                     else if (board[k][j] === board[i][j] && noBlockVertical(j, k, i, board)) {
@@ -233,7 +229,6 @@ function moveUp() {
                         board[i][j] = 0;
                         added[k][j] = 1;
                         score += board[k][j];
-                        continue;
                     }
                 }
             }
@@ -259,7 +254,6 @@ function moveDown() {
                         moveAnimation(i, j, k, j);
                         board[k][j] = board[i][j];
                         board[i][j] = 0;
-                        continue;
                     }
                     //落脚位置的数字和本来的数字相等 && 中间没有障碍物
                     else if (board[k][j] === board[i][j] && noBlockVertical(j, i, k, board)) {
@@ -270,7 +264,6 @@ function moveDown() {
                         board[i][j] = 0;
                         added[k][j] = 1;
                         score += board[k][j];
-                        continue;
                     }
                 }
             }
@@ -287,76 +280,80 @@ function addedReset() {
     }
 }
 
-function canMoveLeft() {
+function canMoveLeft(board) {
     for (var i = 0; i < 4; i++)
-        for (var j = 1; j < 4; j++)
-            if (board[i][j] != 0 && (board[i][j - 1] == 0 || board[i][j - 1] == board[i][j]))
-                return true;
-    return false;
-}
-
-function canMoveRight( board ){
-    for(var i = 0;i<4;i++)
-        for(var j = 0;j<4;j++)
-            if( board[i][j] !=0 && j != 3)
-                if( board[i][j+1] == 0 || board[i][j+1] == board[i][j])
-                    return true;
-
-    return false;
-}
-
-function canMoveUp( board ){
-    for(var i = 0;i<4;i++)
-        for(var j = 0;j<4;j++)
-            if( board[i][j] !=0 && i != 0)
-                if( board[i-1][j] == 0 || board[i-1][j] == board[i][j])
+        for (var j = 0; j < 4; j++)
+            if( board[i][j] !==0 && j !== 0)
+                if( board[i][j-1] === 0 || board[i][j-1] === board[i][j])
                     return true;
     return false;
 }
 
-function canMoveDown( board ){
-    for(var i = 0;i<4;i++)
-        for(var j = 0;j<4;j++)
-            if( board[i][j] !=0 && i != 3)
-                if( board[i+1][j] == 0 || board[i+1][j] == board[i][j])
+function canMoveRight(board) {
+    for (var i = 0; i < 4; i++)
+        for (var j = 0; j < 4; j++)
+            if (board[i][j] !== 0 && j !== 3)
+                if (board[i][j + 1] === 0 || board[i][j + 1] === board[i][j])
                     return true;
     return false;
 }
 
-function moveAnimation(fromx, fromy, tox, toy){//实现格子移动方法
+function canMoveUp(board) {
+    for (var i = 0; i < 4; i++)
+        for (var j = 0; j < 4; j++)
+            if (board[i][j] !== 0 && i !== 0)
+                if (board[i - 1][j] === 0 || board[i - 1][j] === board[i][j])
+                    return true;
+    return false;
+}
 
-    var numberCell = $('#number-cell-'+fromx +'-'+fromy);
-    numberCell.animate({top:getPosTop(tox),
-        left:getPosLeft(toy)},200);
+function canMoveDown(board) {
+    for (var i = 0; i < 4; i++)
+        for (var j = 0; j < 4; j++)
+            if (board[i][j] !== 0 && i !== 3)
+                if (board[i + 1][j] === 0 || board[i + 1][j] === board[i][j])
+                    return true;
+    return false;
+}
+
+function moveAnimation(fromx, fromy, tox, toy) {//实现格子移动方法
+
+    var numberGrid = $('#number-grid-' + fromx + '-' + fromy);
+    numberGrid.animate({
+        top: getPosTop(tox),
+        left: getPosLeft(toy)
+    }, 200);
 }
 
 function numberAnimation(i, j, randNumber) {//实现随机数字的样式变动
 
     var numberGrid = $('#number-grid-' + i + '-' + j);
-    numberGrid.css("background-color", getNumberBgc(randNumber));
-    numberGrid.css("color", getNumberColor(randNumber));
+    numberGrid.css({
+        "background-color": getNumberBgc(randNumber),
+        "color": getNumberColor(randNumber)
+    });
     numberGrid.text(randNumber);
 
     numberGrid.animate({
-        width : "100px",
-        height : "100px",
-        top : getPosTop(i),
-        left : getPosLeft(j)
+        width: "100px",
+        height: "100px",
+        top: getPosTop(i),
+        left: getPosLeft(j)
     }, 50);
 }
 
 ////判断水平方向是否有障碍物
-function noBlockHorizontal(row, col1, col2, board){
-    for(var i = col2 + 1; i<col1; i++)
-        if(board[row][i]!=0)
+function noBlockHorizontal(row, col1, col2, board) {
+    for (var i = col2 + 1; i < col1; i++)
+        if (board[row][i] !== 0)
             return false;
     return true;
 }
 
 //判断竖直方向是否有障碍物
-function noBlockVertical(col, row1, row2, board){
-    for(var i = row1 + 1; i<row2; i++)
-        if(board[i][col]!=0)
+function noBlockVertical(col, row1, row2, board) {
+    for (var i = row1 + 1; i < row2; i++)
+        if (board[i][col] !== 0)
             return false;
     return true;
 }
@@ -407,15 +404,15 @@ function getNumberBgc(number) {
 }
 
 function getNumberColor(number) {
-    if (number <= 4){
+    if (number <= 4) {
         return "#776e65";
     }
     return "white";
 }
 
 function nospace(board) {
-    for ( var i = 0; i < 4; i++)
-        for ( var j = 0; j < 4; j++)
+    for (var i = 0; i < 4; i++)
+        for (var j = 0; j < 4; j++)
             if (board[i][j] === 0)
                 return false;
     return true;
@@ -429,13 +426,13 @@ function isgameover() {
 }
 
 function gameover() {
-    $("#gameover").css("display","block");
+    $("#gameover").css("display", "block");
 }
 
-function nomove(board){
+function nomove(board) {
     return !(canMoveLeft(board) || canMoveRight(board) || canMoveUp(board) || canMoveDown(board));
 }
 
-function getScore(){
-    document.getElementById("score").innerHTML=score;
+function getScore() {
+    document.getElementById("score").innerHTML = score;
 }
