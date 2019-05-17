@@ -10,6 +10,7 @@ $(document).ready(function (e) {
 
 function init() {
     score = 0;
+    $("#gameover").css("display","none");
     for (var i = 0; i < 4; i++) {
         for (var j = 0; j < 4; j++) {
             var gridCell = $("#grid-cell-" + i + "-" + j);
@@ -417,13 +418,14 @@ function nospace(board) {
 
 function isgameover() {
     if (nospace(board) && nomove(board)) {
-        bool = true;
+        gameover();
     }
-    gameover();
+
 }
 
 function gameover() {
     //TODO
+    $("#gameover").css("display","block");
 }
 
 function nomove(board){

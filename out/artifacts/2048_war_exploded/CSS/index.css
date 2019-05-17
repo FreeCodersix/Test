@@ -65,5 +65,5 @@ header p {
     left: 125px;
     width: 250px;
     text-align: center;
-    display: inline-block;
+    display: none;
 }

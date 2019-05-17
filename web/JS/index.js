@@ -1,7 +1,6 @@
 var board = new Array();//存储随机生生成的数字
 var added = new Array();//记录当前位置是否完成过合并
 var score = 0;
-var bool = false;
 
 $(document).ready(function (e) {
     //初始化棋盘格
@@ -10,6 +9,7 @@ $(document).ready(function (e) {
 
 function init() {
     score = 0;
+    $("#gameover").css("display","none");
     for (var i = 0; i < 4; i++) {
         for (var j = 0; j < 4; j++) {
             var gridCell = $("#grid-cell-" + i + "-" + j);
@@ -417,13 +417,13 @@ function nospace(board) {
 
 function isgameover() {
     if (nospace(board) && nomove(board)) {
-        bool = true;
+        gameover();
     }
-    gameover();
+
 }
 
 function gameover() {
-    //TODO
+    $("#gameover").css("display","block");
 }
 
 function nomove(board){
