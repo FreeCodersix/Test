@@ -51,7 +51,7 @@ function updateThePage() {//更新游戏界面。
         for (var j = 0; j < 4; j++) {
             $("#grid-container").append('<div class="number-grid" id="number-grid-' + i + '-' + j + '"></div>');
             var numberGrid = $('#number-grid-' + i + '-' + j);
-            if (board[i][j] == 0) {
+            if (board[i][j] === 0) {
                 numberGrid.css({
                     "width": 0,
                     "height": 0
@@ -98,6 +98,7 @@ $(document).keydown(function (event) {
     switch (event.keyCode) {
         case 37://left
             if (moveLeft()) {
+                getScore();
                 //每次移动都需要生成一个数字
                 randomNum();
                 setTimeout("isgameover()", 400);//400毫秒
@@ -105,6 +106,7 @@ $(document).keydown(function (event) {
             break;
         case 38://up
             if (moveUp()) {
+                getScore();
                 //每次移动都需要生成一个数字
                 randomNum();
                 setTimeout("isgameover()", 400);//400毫秒
@@ -112,6 +114,7 @@ $(document).keydown(function (event) {
             break;
         case 39://right
             if (moveRight()) {
+                getScore();
                 //每次移动都需要生成一个数字
                 randomNum();
                 setTimeout("isgameover()", 400);//400毫秒
@@ -119,6 +122,7 @@ $(document).keydown(function (event) {
             break;
         case 40://down
             if (moveDown()) {
+                getScore();
                 //每次移动都需要生成一个数字
                 randomNum();
                 setTimeout("isgameover()", 400);//400毫秒
@@ -153,7 +157,7 @@ function moveLeft() {
                         board[i][k] += board[i][j];
                         board[i][j] = 0;
                         added[i][k] = 1;//此位置已经合并过，避免一次按键触发多次事件
-
+                        score += board[i][k];
                         continue;
                     }
                 }
@@ -191,6 +195,7 @@ function moveRight() {
                         board[i][k] += board[i][j];
                         board[i][j] = 0;
                         added[i][k] = 1;
+                        score += board[i][k];
                         continue;
                     }
                 }
@@ -264,6 +269,7 @@ function moveDown() {
                         board[k][j] += board[i][j];
                         board[i][j] = 0;
                         added[k][j] = 1;
+                        score += board[i][k];
                         continue;
                     }
                 }
@@ -428,4 +434,8 @@ function gameover() {
 
 function nomove(board){
     return !(canMoveLeft(board) || canMoveRight(board) || canMoveUp(board) || canMoveDown(board));
+}
+
+function getScore(){
+    document.getElementById("score").innerHTML=score;
 }

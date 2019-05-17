@@ -7,10 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="356a1653-a0a9-4e95-8f82-9b1807cc1e7c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/2048_war_exploded/CSS/index.css" afterPath="$PROJECT_DIR$/out/artifacts/2048_war_exploded/CSS/index.css" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/2048_war_exploded/JS/index.js" afterPath="$PROJECT_DIR$/out/artifacts/2048_war_exploded/JS/index.js" />
-      <change beforePath="$PROJECT_DIR$/web/CSS/index.css" afterPath="$PROJECT_DIR$/web/CSS/index.css" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
       <change beforePath="$PROJECT_DIR$/web/JS/index.js" afterPath="$PROJECT_DIR$/web/JS/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -36,15 +33,15 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/JS/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2520">
-              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="280">
+              <caret line="244" column="20" lean-forward="false" selection-start-line="244" selection-start-column="20" selection-end-line="244" selection-end-column="20" />
               <folding>
                 <element signature="e#124#152#0" expanded="false" />
+                <element signature="n#!!block;n#init#0" expanded="false" />
                 <element signature="n#!!block;n#getPosTop#0" expanded="false" />
                 <element signature="n#!!block;n#getPosLeft#0" expanded="false" />
                 <element signature="n#!!block;n#updateThePage#0" expanded="false" />
                 <element signature="n#!!block;n#randomNum#0" expanded="false" />
-                <element signature="e#2452#3300#0" expanded="false" />
                 <element signature="n#!!block;n#moveLeft#0" expanded="false" />
                 <element signature="n#!!block;n#moveRight#0" expanded="false" />
                 <element signature="n#!!block;n#moveUp#0" expanded="false" />
@@ -62,6 +59,7 @@
                 <element signature="n#!!block;n#getNumberColor#0" expanded="false" />
                 <element signature="n#!!block;n#nospace#0" expanded="false" />
                 <element signature="n#!!block;n#nomove#0" expanded="false" />
+                <element signature="n#!!block;n#getScore#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -500,12 +498,12 @@
       <workItem from="1557895019214" duration="7111000" />
       <workItem from="1557903361929" duration="11494000" />
       <workItem from="1557918484824" duration="6298000" />
-      <workItem from="1558071226646" duration="2171000" />
+      <workItem from="1558071226646" duration="4134000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28620000" />
+    <option name="totallyTimeSpent" value="30583000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="674" y="0" width="700" height="744" extended-state="0" />
@@ -578,11 +576,11 @@
           <caret line="425" column="10" lean-forward="false" selection-start-line="425" selection-start-column="10" selection-end-line="425" selection-end-column="10" />
           <folding>
             <element signature="e#124#152#0" expanded="false" />
+            <element signature="n#!!block;n#init#0" expanded="false" />
             <element signature="n#!!block;n#getPosTop#0" expanded="false" />
             <element signature="n#!!block;n#getPosLeft#0" expanded="false" />
             <element signature="n#!!block;n#updateThePage#0" expanded="false" />
             <element signature="n#!!block;n#randomNum#0" expanded="false" />
-            <element signature="e#2452#3300#0" expanded="false" />
             <element signature="n#!!block;n#moveLeft#0" expanded="false" />
             <element signature="n#!!block;n#moveRight#0" expanded="false" />
             <element signature="n#!!block;n#moveUp#0" expanded="false" />
@@ -600,6 +598,7 @@
             <element signature="n#!!block;n#getNumberColor#0" expanded="false" />
             <element signature="n#!!block;n#nospace#0" expanded="false" />
             <element signature="n#!!block;n#nomove#0" expanded="false" />
+            <element signature="n#!!block;n#getScore#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -626,11 +625,11 @@
           <caret line="228" column="20" lean-forward="false" selection-start-line="228" selection-start-column="20" selection-end-line="228" selection-end-column="20" />
           <folding>
             <element signature="e#124#152#0" expanded="false" />
+            <element signature="n#!!block;n#init#0" expanded="false" />
             <element signature="n#!!block;n#getPosTop#0" expanded="false" />
             <element signature="n#!!block;n#getPosLeft#0" expanded="false" />
             <element signature="n#!!block;n#updateThePage#0" expanded="false" />
             <element signature="n#!!block;n#randomNum#0" expanded="false" />
-            <element signature="e#2452#3300#0" expanded="false" />
             <element signature="n#!!block;n#moveLeft#0" expanded="false" />
             <element signature="n#!!block;n#moveRight#0" expanded="false" />
             <element signature="n#!!block;n#moveUp#0" expanded="false" />
@@ -648,6 +647,7 @@
             <element signature="n#!!block;n#getNumberColor#0" expanded="false" />
             <element signature="n#!!block;n#nospace#0" expanded="false" />
             <element signature="n#!!block;n#nomove#0" expanded="false" />
+            <element signature="n#!!block;n#getScore#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -666,11 +666,11 @@
           <caret line="83" column="23" lean-forward="true" selection-start-line="83" selection-start-column="23" selection-end-line="83" selection-end-column="23" />
           <folding>
             <element signature="e#124#152#0" expanded="false" />
+            <element signature="n#!!block;n#init#0" expanded="false" />
             <element signature="n#!!block;n#getPosTop#0" expanded="false" />
             <element signature="n#!!block;n#getPosLeft#0" expanded="false" />
             <element signature="n#!!block;n#updateThePage#0" expanded="false" />
             <element signature="n#!!block;n#randomNum#0" expanded="false" />
-            <element signature="e#2452#3300#0" expanded="false" />
             <element signature="n#!!block;n#moveLeft#0" expanded="false" />
             <element signature="n#!!block;n#moveRight#0" expanded="false" />
             <element signature="n#!!block;n#moveUp#0" expanded="false" />
@@ -688,6 +688,7 @@
             <element signature="n#!!block;n#getNumberColor#0" expanded="false" />
             <element signature="n#!!block;n#nospace#0" expanded="false" />
             <element signature="n#!!block;n#nomove#0" expanded="false" />
+            <element signature="n#!!block;n#getScore#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -759,15 +760,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/JS/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2520">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state relative-caret-position="280">
+          <caret line="244" column="20" lean-forward="false" selection-start-line="244" selection-start-column="20" selection-end-line="244" selection-end-column="20" />
           <folding>
             <element signature="e#124#152#0" expanded="false" />
+            <element signature="n#!!block;n#init#0" expanded="false" />
             <element signature="n#!!block;n#getPosTop#0" expanded="false" />
             <element signature="n#!!block;n#getPosLeft#0" expanded="false" />
             <element signature="n#!!block;n#updateThePage#0" expanded="false" />
             <element signature="n#!!block;n#randomNum#0" expanded="false" />
-            <element signature="e#2452#3300#0" expanded="false" />
             <element signature="n#!!block;n#moveLeft#0" expanded="false" />
             <element signature="n#!!block;n#moveRight#0" expanded="false" />
             <element signature="n#!!block;n#moveUp#0" expanded="false" />
@@ -785,6 +786,7 @@
             <element signature="n#!!block;n#getNumberColor#0" expanded="false" />
             <element signature="n#!!block;n#nospace#0" expanded="false" />
             <element signature="n#!!block;n#nomove#0" expanded="false" />
+            <element signature="n#!!block;n#getScore#0" expanded="false" />
           </folding>
         </state>
       </provider>
