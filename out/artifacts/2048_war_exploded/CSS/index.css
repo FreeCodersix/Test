@@ -13,8 +13,8 @@ header h1 {
     margin-bottom: 20px;
 }
 
-header #newgameButton{
-    width: 100px;
+header #newgameButton, #rankingList{
+    width: 109px;
     height: 37px;
     padding: 10px;
     background: #8f7a66;
@@ -27,7 +27,7 @@ header #newgameButton{
     cursor: pointer;
 }
 
-header #newgameButton:hover{
+header #newgameButton:hover, #rankingList:hover{
     background: #9f8b77;
 }
 
