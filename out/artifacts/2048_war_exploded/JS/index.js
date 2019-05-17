@@ -1,5 +1,4 @@
 var board = new Array();//存储随机生生成的数字
-var added = new Array();//记录当前位置是否完成过合并
 var score = 0;
 
 $(document).ready(function (e) {
@@ -24,13 +23,6 @@ function init() {
         board[i] = new Array();
         for (var j = 0; j < 4; j++) {
             board[i][j] = 0;
-        }
-    }
-
-    for (var i = 0; i < 4; i++) {
-        added[i] = new Array();
-        for (var j = 0; j < 4; j++) {
-            added[i][j] = 0;
         }
     }
 
@@ -138,7 +130,6 @@ function moveLeft() {
     if (!canMoveLeft(board))
         return false;
 
-    addedReset();
     //函数核心
     for (var i = 0; i < 4; i++)
         for (var j = 1; j < 4; j++) {//第一列的数字不可能向左移动
@@ -158,7 +149,6 @@ function moveLeft() {
                         //add
                         board[i][k] += board[i][j];
                         board[i][j] = 0;
-                        added[i][k] = 1;//此位置已经合并过，避免一次按键触发多次事件
                         score += board[i][k];
                     }
                 }
@@ -173,7 +163,6 @@ function moveRight() {
     if (!canMoveRight(board))
         return false;
 
-    addedReset();
     //函数核心
     for (var i = 0; i < 4; i++)
         for (var j = 2; j >= 0; j--) {//最后一列的数字不可能向右移动
@@ -194,7 +183,6 @@ function moveRight() {
                         //add
                         board[i][k] += board[i][j];
                         board[i][j] = 0;
-                        added[i][k] = 1;
                         score += board[i][k];
                     }
                 }
@@ -209,7 +197,6 @@ function moveUp() {
     if (!canMoveUp(board))
         return false;
 
-    addedReset();
     for (var j = 0; j < 4; j++)
         for (var i = 1; i < 4; i++) {//第一行的数字不可能向上移动
             if (board[i][j] !== 0) {
@@ -229,7 +216,6 @@ function moveUp() {
                         //add
                         board[k][j] += board[i][j];
                         board[i][j] = 0;
-                        added[k][j] = 1;
                         score += board[k][j];
                     }
                 }
@@ -244,7 +230,6 @@ function moveDown() {
     if (!canMoveDown(board))
         return false;
 
-    addedReset();
     for (var j = 0; j < 4; j++)
         for (var i = 2; i >= 0; i--) {//最后一行的数字不可能向下移动
             if (board[i][j] !== 0) {
@@ -264,7 +249,6 @@ function moveDown() {
                         //add
                         board[k][j] += board[i][j];
                         board[i][j] = 0;
-                        added[k][j] = 1;
                         score += board[k][j];
                     }
                 }
@@ -272,14 +256,6 @@ function moveDown() {
         }
     setTimeout("updateThePage()", 200);
     return true;
-}
-
-function addedReset() {
-    for (var i = 0; i < 4; i++) {
-        for (var j = 0; j < 4; j++) {
-            added[i][j] = 0;
-        }
-    }
 }
 
 function canMoveLeft(board) {
