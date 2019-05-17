@@ -27,6 +27,10 @@ header #newgameButton{
     cursor: pointer;
 }
 
+header #newgameButton:hover{
+    background: #9f8b77;
+}
+
 header p {
     font-family: Arial,sans-serif;
     font-size: 25px;
