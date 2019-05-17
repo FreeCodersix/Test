@@ -139,11 +139,11 @@ function moveLeft() {
     //函数核心
     for (var i = 0; i < 4; i++)
         for (var j = 1; j < 4; j++) {//第一列的数字不可能向左移动
-            if (board[i][j] != 0) {
+            if (board[i][j] !== 0) {
                 //(i,j)左侧的元素
                 for (var k = 0; k < j; k++) {
                     //落脚位置的是否为空 && 中间没有障碍物
-                    if (board[i][k] == 0 && noBlockHorizontal(i, j, k, board)) {
+                    if (board[i][k] === 0 && noBlockHorizontal(i, j, k, board)) {
                         //满足条件就移动
                         moveAnimation(i, j, i, k);
                         board[i][k] = board[i][j];
@@ -151,7 +151,7 @@ function moveLeft() {
                         continue;
                     }
                     //落脚位置的数字和本来的数字相等 && 中间没有障碍物
-                    else if (board[i][k] == board[i][j] && noBlockHorizontal(i, j, k, board)) {
+                    else if (board[i][k] === board[i][j] && noBlockHorizontal(i, j, k, board)) {
                         moveAnimation(i, j, i, k);
                         //add
                         board[i][k] += board[i][j];
@@ -176,11 +176,11 @@ function moveRight() {
     //函数核心
     for (var i = 0; i < 4; i++)
         for (var j = 2; j >= 0; j--) {//最后一列的数字不可能向右移动
-            if (board[i][j] != 0) {
+            if (board[i][j] !== 0) {
                 //(i,j)右侧的元素
                 for (var k = 3; k > j; k--) {
                     //落脚位置的是否为空 && 中间没有障碍物
-                    if (board[i][k] == 0 && noBlockHorizontal(i, j, k, board)) {
+                    if (board[i][k] === 0 && noBlockHorizontal(i, j, k, board)) {
                         //move
                         moveAnimation(i, j, i, k);
                         board[i][k] = board[i][j];
@@ -188,7 +188,7 @@ function moveRight() {
                         continue;
                     }
                     //落脚位置的数字和本来的数字相等 && 中间没有障碍物
-                    else if (board[i][k] == board[i][j] && noBlockHorizontal(i, j, k, board)) {
+                    else if (board[i][k] === board[i][j] && noBlockHorizontal(i, j, k, board)) {
                         //move
                         moveAnimation(i, j, i, k);
                         //add
@@ -213,11 +213,11 @@ function moveUp() {
     addedReset();
     for (var j = 0; j < 4; j++)
         for (var i = 1; i < 4; i++) {//第一行的数字不可能向上移动
-            if (board[i][j] != 0) {
+            if (board[i][j] !== 0) {
                 //(i,j)上面的元素
                 for (var k = 0; k < i; k++) {
                     //落脚位置的是否为空 && 中间没有障碍物
-                    if (board[k][j] == 0 && noBlockVertical(j, k, i, board)) {
+                    if (board[k][j] === 0 && noBlockVertical(j, k, i, board)) {
                         //move
                         moveAnimation(i, j, k, j);
                         board[k][j] = board[i][j];
@@ -225,7 +225,7 @@ function moveUp() {
                         continue;
                     }
                     //落脚位置的数字和本来的数字相等 && 中间没有障碍物
-                    else if (board[k][j] == board[i][j] && noBlockVertical(j, k, i, board)) {
+                    else if (board[k][j] === board[i][j] && noBlockVertical(j, k, i, board)) {
                         //move
                         moveAnimation(i, j, k, j);
                         //add
@@ -250,11 +250,11 @@ function moveDown() {
     addedReset();
     for (var j = 0; j < 4; j++)
         for (var i = 2; i >= 0; i--) {//最后一行的数字不可能向下移动
-            if (board[i][j] != 0) {
+            if (board[i][j] !== 0) {
                 //(i,j)上面的元素
                 for (var k = 3; k > i; k--) {
                     //落脚位置的是否为空 && 中间没有障碍物
-                    if (board[k][j] == 0 && noBlockVertical(j, i, k, board)) {
+                    if (board[k][j] === 0 && noBlockVertical(j, i, k, board)) {
                         //move
                         moveAnimation(i, j, k, j);
                         board[k][j] = board[i][j];
@@ -262,14 +262,14 @@ function moveDown() {
                         continue;
                     }
                     //落脚位置的数字和本来的数字相等 && 中间没有障碍物
-                    else if (board[k][j] == board[i][j] && noBlockVertical(j, i, k, board)) {
+                    else if (board[k][j] === board[i][j] && noBlockVertical(j, i, k, board)) {
                         //move
                         moveAnimation(i, j, k, j);
                         //add
                         board[k][j] += board[i][j];
                         board[i][j] = 0;
                         added[k][j] = 1;
-                        score += board[i][k];
+                        score += board[k][j];
                         continue;
                     }
                 }
