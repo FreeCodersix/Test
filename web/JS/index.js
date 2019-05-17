@@ -56,7 +56,9 @@ function updateThePage() {//更新游戏界面。
             if (board[i][j] === 0) {
                 numberGrid.css({
                     "width": 0,
-                    "height": 0
+                    "height": 0,
+                    "top": getPosTop(i),
+                    "left": getPosLeft(j)
                 });
             } else {
                 numberGrid.css({
