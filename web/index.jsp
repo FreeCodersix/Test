@@ -37,7 +37,11 @@
     <div class="grid-cell" id="grid-cell-3-2"></div>
     <div class="grid-cell" id="grid-cell-3-3"></div>
 </div>
-
+<div id="gameoverDiv">
+    <div id="gameover">
+        GAME OVER
+    </div>
+</div>
 </body>
 
 </html>

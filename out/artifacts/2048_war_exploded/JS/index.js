@@ -1,6 +1,7 @@
 var board = new Array();//存储随机生生成的数字
 var added = new Array();//记录当前位置是否完成过合并
 var score = 0;
+var bool = false;
 
 $(document).ready(function (e) {
     //初始化棋盘格
@@ -71,6 +72,9 @@ function updateThePage() {//更新游戏界面。
 }
 
 function randomNum() {//生成随机的格子
+    if (nospace(board)){
+        return false;
+    }
 
     //随机一个位置
     var x = parseInt(Math.floor(Math.random() * 4));
@@ -96,24 +100,28 @@ $(document).keydown(function (event) {
             if (moveLeft()) {
                 //每次移动都需要生成一个数字
                 randomNum();
+                setTimeout("isgameover()", 400);//400毫秒
             }
             break;
         case 38://up
             if (moveUp()) {
                 //每次移动都需要生成一个数字
                 randomNum();
+                setTimeout("isgameover()", 400);//400毫秒
             }
             break;
         case 39://right
             if (moveRight()) {
                 //每次移动都需要生成一个数字
                 randomNum();
+                setTimeout("isgameover()", 400);//400毫秒
             }
             break;
         case 40://down
             if (moveDown()) {
                 //每次移动都需要生成一个数字
                 randomNum();
+                setTimeout("isgameover()", 400);//400毫秒
             }
             break;
     }
@@ -397,4 +405,27 @@ function getNumberColor(number) {
         return "#776e65";
     }
     return "white";
+}
+
+function nospace(board) {
+    for ( var i = 0; i < 4; i++)
+        for ( var j = 0; j < 4; j++)
+            if (board[i][j] === 0)
+                return false;
+    return true;
+}
+
+function isgameover() {
+    if (nospace(board) && nomove(board)) {
+        bool = true;
+    }
+    gameover();
+}
+
+function gameover() {
+    //TODO
+}
+
+function nomove(board){
+    return !(canMoveLeft(board) || canMoveRight(board) || canMoveUp(board) || canMoveDown(board));
 }

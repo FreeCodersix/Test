@@ -428,5 +428,4 @@ function gameover() {
 
 function nomove(board){
     return !(canMoveLeft(board) || canMoveRight(board) || canMoveUp(board) || canMoveDown(board));
-
 }

@@ -7,10 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="356a1653-a0a9-4e95-8f82-9b1807cc1e7c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Administrator.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/Administrator.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/2048_war_exploded/JS/index.js" afterPath="$PROJECT_DIR$/out/artifacts/2048_war_exploded/JS/index.js" />
+      <change beforePath="$PROJECT_DIR$/web/CSS/index.css" afterPath="$PROJECT_DIR$/web/CSS/index.css" />
       <change beforePath="$PROJECT_DIR$/web/JS/index.js" afterPath="$PROJECT_DIR$/web/JS/index.js" />
+      <change beforePath="$PROJECT_DIR$/web/index.jsp" afterPath="$PROJECT_DIR$/web/index.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,18 +25,18 @@
       <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1020">
-              <caret line="34" column="39" lean-forward="false" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
+            <state relative-caret-position="313">
+              <caret line="43" column="6" lean-forward="false" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/JS/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="425" column="10" lean-forward="false" selection-start-line="425" selection-start-column="10" selection-end-line="425" selection-end-column="10" />
+            <state relative-caret-position="232">
+              <caret line="425" column="10" lean-forward="true" selection-start-line="425" selection-start-column="10" selection-end-line="425" selection-end-column="10" />
               <folding>
                 <element signature="e#142#170#0" expanded="false" />
                 <element signature="n#!!block;n#init#0" expanded="false" />
@@ -59,16 +59,18 @@
                 <element signature="n#!!block;n#getNumberBgc#0" expanded="false" />
                 <element signature="n#!!block;n#getNumberColor#0" expanded="false" />
                 <element signature="n#!!block;n#nospace#0" expanded="false" />
+                <element signature="n#!!block;n#isgameover#0" expanded="false" />
+                <element signature="n#!!block;n#nomove#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/CSS/index.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="36" column="23" lean-forward="true" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
+            <state relative-caret-position="223">
+              <caret line="65" column="17" lean-forward="true" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -117,10 +119,10 @@
       <list>
         <option value="$PROJECT_DIR$/web/update.jsp" />
         <option value="$PROJECT_DIR$/web/JS.js" />
-        <option value="$PROJECT_DIR$/web/index.jsp" />
         <option value="$PROJECT_DIR$/web/index.html" />
-        <option value="$PROJECT_DIR$/web/CSS/index.css" />
         <option value="$PROJECT_DIR$/web/JS/index.js" />
+        <option value="$PROJECT_DIR$/web/index.jsp" />
+        <option value="$PROJECT_DIR$/web/CSS/index.css" />
       </list>
     </option>
   </component>
@@ -179,9 +181,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -204,6 +205,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -213,7 +215,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.web.browsers" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Program" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
@@ -495,12 +497,13 @@
       <workItem from="1557887070148" duration="1546000" />
       <workItem from="1557895019214" duration="7111000" />
       <workItem from="1557903361929" duration="11494000" />
-      <workItem from="1557918484824" duration="6167000" />
+      <workItem from="1557918484824" duration="6298000" />
+      <workItem from="1558071226646" duration="1011000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26318000" />
+    <option name="totallyTimeSpent" value="27460000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="674" y="0" width="700" height="744" extended-state="0" />
@@ -561,6 +564,54 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/CSS/index.css">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="36" column="23" lean-forward="true" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/JS/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3390">
+          <caret line="425" column="10" lean-forward="false" selection-start-line="425" selection-start-column="10" selection-end-line="425" selection-end-column="10" />
+          <folding>
+            <element signature="e#142#170#0" expanded="false" />
+            <element signature="n#!!block;n#init#0" expanded="false" />
+            <element signature="n#!!block;n#getPosTop#0" expanded="false" />
+            <element signature="n#!!block;n#getPosLeft#0" expanded="false" />
+            <element signature="n#!!block;n#updateThePage#0" expanded="false" />
+            <element signature="n#!!block;n#moveLeft#0" expanded="false" />
+            <element signature="n#!!block;n#moveRight#0" expanded="false" />
+            <element signature="n#!!block;n#moveUp#0" expanded="false" />
+            <element signature="n#!!block;n#moveDown#0" expanded="false" />
+            <element signature="n#!!block;n#addedReset#0" expanded="false" />
+            <element signature="n#!!block;n#canMoveLeft#0" expanded="false" />
+            <element signature="n#!!block;n#canMoveRight#0" expanded="false" />
+            <element signature="n#!!block;n#canMoveUp#0" expanded="false" />
+            <element signature="n#!!block;n#canMoveDown#0" expanded="false" />
+            <element signature="n#!!block;n#moveAnimation#0" expanded="false" />
+            <element signature="n#!!block;n#numberAnimation#0" expanded="false" />
+            <element signature="n#!!block;n#noBlockHorizontal#0" expanded="false" />
+            <element signature="n#!!block;n#noBlockVertical#0" expanded="false" />
+            <element signature="n#!!block;n#getNumberBgc#0" expanded="false" />
+            <element signature="n#!!block;n#getNumberColor#0" expanded="false" />
+            <element signature="n#!!block;n#nospace#0" expanded="false" />
+            <element signature="n#!!block;n#isgameover#0" expanded="false" />
+            <element signature="n#!!block;n#nomove#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="34" column="39" lean-forward="false" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/CSS/index.css">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1200">
           <caret line="40" column="17" lean-forward="true" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
           <folding />
@@ -593,6 +644,8 @@
             <element signature="n#!!block;n#getNumberBgc#0" expanded="false" />
             <element signature="n#!!block;n#getNumberColor#0" expanded="false" />
             <element signature="n#!!block;n#nospace#0" expanded="false" />
+            <element signature="n#!!block;n#isgameover#0" expanded="false" />
+            <element signature="n#!!block;n#nomove#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -631,6 +684,8 @@
             <element signature="n#!!block;n#getNumberBgc#0" expanded="false" />
             <element signature="n#!!block;n#getNumberColor#0" expanded="false" />
             <element signature="n#!!block;n#nospace#0" expanded="false" />
+            <element signature="n#!!block;n#isgameover#0" expanded="false" />
+            <element signature="n#!!block;n#nomove#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -684,26 +739,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/index.html" />
-    <entry file="file://$PROJECT_DIR$/web/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="34" column="39" lean-forward="false" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/CSS/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="36" column="23" lean-forward="true" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/JS/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="425" column="10" lean-forward="false" selection-start-line="425" selection-start-column="10" selection-end-line="425" selection-end-column="10" />
+        <state relative-caret-position="232">
+          <caret line="425" column="10" lean-forward="true" selection-start-line="425" selection-start-column="10" selection-end-line="425" selection-end-column="10" />
           <folding>
             <element signature="e#142#170#0" expanded="false" />
             <element signature="n#!!block;n#init#0" expanded="false" />
@@ -726,7 +765,25 @@
             <element signature="n#!!block;n#getNumberBgc#0" expanded="false" />
             <element signature="n#!!block;n#getNumberColor#0" expanded="false" />
             <element signature="n#!!block;n#nospace#0" expanded="false" />
+            <element signature="n#!!block;n#isgameover#0" expanded="false" />
+            <element signature="n#!!block;n#nomove#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="43" column="6" lean-forward="false" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/CSS/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="65" column="17" lean-forward="true" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
