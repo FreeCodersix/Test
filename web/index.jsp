@@ -12,7 +12,7 @@
 <body>
 <header>
     <h1>2048</h1>
-    <a href="javascript:;" id="newgameButton">New Game</a>
+    <a href="javascript:init();" id="newgameButton">New Game</a>
     <p>
         score:<span id="score">0</span>
     </p>
