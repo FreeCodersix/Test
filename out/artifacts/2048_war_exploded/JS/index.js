@@ -11,6 +11,7 @@ function init() {
     score = 0;
     $("#RankingOp").css("display", "none");
     $("#gameover").css("display", "none");
+    bool = false;
     for (var i = 0; i < 4; i++) {
         for (var j = 0; j < 4; j++) {
             var gridCell = $("#grid-cell-" + i + "-" + j);
@@ -402,7 +403,6 @@ function isgameover() {
     if (nospace(board) && nomove(board)) {
         gameover();
     }
-
 }
 
 function gameover() {

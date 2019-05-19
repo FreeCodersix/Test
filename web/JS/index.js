@@ -403,7 +403,6 @@ function isgameover() {
     if (nospace(board) && nomove(board)) {
         gameover();
     }
-
 }
 
 function gameover() {

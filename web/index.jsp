@@ -70,7 +70,14 @@
         <div class="rankR"></div>
     </div>
 </div>
-
+<div id="formI">
+    <form action="update.jsp" method="post">
+        <div id="div">
+            <div class="scoreLine">请留下您的大名：<input type="text" name="newName" class="input"/></div>
+        </div>
+        <input type="submit" name="submit" value="确定" id="login"/>
+    </form>
+</div>
 </body>
 
 </html>
