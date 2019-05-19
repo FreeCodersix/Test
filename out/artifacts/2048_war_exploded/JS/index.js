@@ -1,5 +1,6 @@
 var board = new Array();//存储随机生生成的数字
 var score = 0;
+var bool = false;
 
 $(document).ready(function (e) {
     //初始化棋盘格
@@ -8,6 +9,7 @@ $(document).ready(function (e) {
 
 function init() {
     score = 0;
+    $("#RankingOp").css("display", "none");
     $("#gameover").css("display", "none");
     for (var i = 0; i < 4; i++) {
         for (var j = 0; j < 4; j++) {
@@ -413,4 +415,14 @@ function nomove(board) {
 
 function getScore() {
     document.getElementById("score").innerHTML = score;
+}
+
+function rankingList() {
+    if (bool === true) {
+        $("#RankingOp").css("display", "none");
+        bool = false;
+    } else {
+        $("#RankingOp").css("display", "block");
+        bool = true;
+    }
 }

@@ -1,3 +1,7 @@
+body{
+    font-family: Arial,sans-serif;
+}
+
 header {
     display: block;
     margin: 0 auto;
@@ -6,7 +10,6 @@ header {
 }
 
 header h1 {
-    font-family: Arial,sans-serif;
     font-size: 60px;
     font-weight: bold;
     margin-top: 20px;
@@ -18,7 +21,6 @@ header #newgameButton, #rankingList{
     height: 37px;
     padding: 10px;
     background: #8f7a66;
-    font-family: Arial,sans-serif;
     color: white;
     border-radius: 10px;
     text-decoration: none;
@@ -32,7 +34,6 @@ header #newgameButton:hover, #rankingList:hover{
 }
 
 header p {
-    font-family: Arial,sans-serif;
     font-size: 25px;
     margin: 20px auto;
 }
@@ -76,7 +77,6 @@ header p {
 #gameover {
     background-color: black;
     color: white;
-    font-family: Arial, sans-serif;
     font-size: 60px;
     position: absolute;
     top: 135px;
@@ -92,6 +92,7 @@ header p {
     margin: -540px auto 0 auto;
     position: relative;
     border-radius: 10px;
+    display: none;
 }
 
 #RankingListDiv,#RankingListScore{

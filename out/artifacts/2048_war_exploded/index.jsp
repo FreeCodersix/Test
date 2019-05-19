@@ -13,7 +13,7 @@
 <header>
     <h1>2048</h1>
     <a href="javascript:init();" id="newgameButton">New Game</a>
-    <a href="javascript:;" id="rankingList">Ranking List</a>
+    <a href="javascript:rankingList();" id="rankingList">Ranking List</a>
     <p>
         score:<span id="score">0</span>
     </p>
@@ -70,6 +70,7 @@
         <div class="rankR"></div>
     </div>
 </div>
+
 </body>
 
 </html>
