@@ -14,7 +14,7 @@ header h1 {
 }
 
 header #newgameButton, #rankingList{
-    width: 109px;
+    width: 100px;
     height: 37px;
     padding: 10px;
     background: #8f7a66;
@@ -84,4 +84,28 @@ header p {
     width: 250px;
     text-align: center;
     display: none;
+}
+
+#RankingOp{
+    width: 500px;
+    height: 500px;
+    margin: -540px auto 0 auto;
+    position: relative;
+    border-radius: 10px;
+}
+
+#RankingListDiv{
+    width: 300px;
+    height: 500px;
+    border-radius: 10px;
+    margin: -540px 550px;
+    position: relative;
+}
+
+#RankingListScore{
+    width: 200px;
+    height: 500px;
+    border-radius: 10px;
+    margin: 40px 850px;
+    position: relative;
 }

@@ -44,6 +44,32 @@
         GAME OVER
     </div>
 </div>
+<div id="RankingOp">
+    <div id="RankingListDiv">
+        <div class="rankL">姓名</div>
+        <div class="rankL"></div>
+        <div class="rankL"></div>
+        <div class="rankL"></div>
+        <div class="rankL"></div>
+        <div class="rankL"></div>
+        <div class="rankL"></div>
+        <div class="rankL"></div>
+        <div class="rankL"></div>
+        <div class="rankL"></div>
+    </div>
+    <div id="RankingListScore">
+        <div class="rankR">分数</div>
+        <div class="rankR"></div>
+        <div class="rankR"></div>
+        <div class="rankR"></div>
+        <div class="rankR"></div>
+        <div class="rankR"></div>
+        <div class="rankR"></div>
+        <div class="rankR"></div>
+        <div class="rankR"></div>
+        <div class="rankR"></div>
+    </div>
+</div>
 </body>
 
 </html>
