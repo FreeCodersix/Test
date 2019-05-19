@@ -109,3 +109,19 @@ header p {
     margin: 40px 850px;
     position: relative;
 }
+
+.rankL,.rankR{
+    width: 300px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #8f7a66;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-weight: bolder;
+    border-radius: 10px;
+}
+
+.rankR {
+    width: 200px;
+}
