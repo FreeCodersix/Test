@@ -1,3 +1,7 @@
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.LinkedList" %>
+<%@ page import="util.DBCPTest" %>
+<%@ page import="static util.DBCPTest.*" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -18,6 +22,7 @@
         score:<span id="score">0</span>
     </p>
 </header>
+
 <div id="grid-container">
     <div class="grid-cell" id="grid-cell-0-0"></div>
     <div class="grid-cell" id="grid-cell-0-1"></div>
@@ -39,11 +44,7 @@
     <div class="grid-cell" id="grid-cell-3-2"></div>
     <div class="grid-cell" id="grid-cell-3-3"></div>
 </div>
-<div id="gameoverDiv">
-    <div id="gameover">
-        GAME OVER
-    </div>
-</div>
+
 <div id="RankingOp">
     <div id="RankingListDiv">
         <div class="rankL">姓名</div>
@@ -70,6 +71,7 @@
         <div class="rankR"></div>
     </div>
 </div>
+
 <div id="formI">
     <form action="update.jsp" method="post">
         <div id="div">
@@ -78,6 +80,40 @@
         <input type="submit" name="submit" value="确定" id="login"/>
     </form>
 </div>
-</body>
 
+<script>
+
+    function rankingList() {
+        <%
+    List<String> lists = new LinkedList<>();
+    lists = query(lists);
+    int i=1;
+
+
+    for (String string: lists){
+        if(i<10){
+        String s[] = string.split(" ");
+        String name = s[0];
+        int score = Integer.parseInt(s[1]);
+        %>
+        $(".rankL")[<%=i%>].innerText = '<%=name%>';
+        $(".rankR")[<%=i%>].innerText = '<%=score%>';
+
+        <%
+            i++;
+        }
+    }
+    %>
+        if (bool === true) {
+            $("#RankingOp").css("display", "none");
+            bool = false;
+        } else {
+            $("#RankingOp").css("display", "block");
+            bool = true;
+        }
+
+    }
+</script>
+
+</body>
 </html>

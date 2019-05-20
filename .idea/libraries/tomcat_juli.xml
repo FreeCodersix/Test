@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="tomcat-juli">
+    <CLASSES>
+      <root url="jar://E:/Chrome/apache-tomcat-8.5.39/bin/tomcat-juli.jar!/" />
+      <root url="jar://E:/Chrome/apache-tomcat-8.5.39/bin/commons-daemon.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
