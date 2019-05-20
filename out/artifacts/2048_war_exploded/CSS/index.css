@@ -146,3 +146,23 @@ header p {
     color: white;
     font-size: 20px;
 }
+
+#gameover {
+    background-color: black;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 60px;
+    position: absolute;
+    top: 135px;
+    left: 125px;
+    width: 250px;
+    text-align: center;
+    display: none;
+}
+
+#gameoverDiv{
+    width: 500px;
+    height: 500px;
+    margin: -500px auto 0 auto;
+    position: relative;
+}

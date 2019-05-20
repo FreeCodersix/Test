@@ -45,6 +45,12 @@
     <div class="grid-cell" id="grid-cell-3-3"></div>
 </div>
 
+<div id="gameoverDiv">
+    <div id="gameover">
+    GAME OVER
+    </div>
+</div>
+
 <div id="RankingOp">
     <div id="RankingListDiv">
         <div class="rankL">姓名</div>
@@ -82,7 +88,6 @@
 </div>
 
 <script>
-
     function rankingList() {
         <%
     List<String> lists = new LinkedList<>();
@@ -113,6 +118,27 @@
         }
 
     }
+
+    $(document).ready(function () {
+        <%
+    List<String> list1 = new LinkedList<>();
+    list1 = query(lists);
+    int j=1;
+
+
+    for (String string1: list1){
+        if(j<10){
+        String s[] = string1.split(" ");
+        int score1 = Integer.parseInt(s[1]);
+        %>
+        newScore = <%=score1%>;
+        <%
+            j++;
+        }
+    }
+    %>
+        console.log(newScore);
+    })
 </script>
 
 </body>
